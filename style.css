@@ -1,0 +1,244 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: black;
+}
+
+.navbar li{
+    display: inline-block;
+    padding-right: 20px;
+    color: white;
+    font-size: 20px;
+}
+.navbar a{
+    text-decoration: none;
+    color: white;
+}
+.navbar{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position:static;
+    width: 100%;
+    height: 100px;
+    background-color:black;
+    align-items: center;
+    animation: slideInRight 1s ease-in-out forwards;
+}
+@keyframes slideInRight {
+    0% {
+        transform: translateX(300px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.navbar h1{
+    padding-left: 40px;
+    font-size: 50px;
+    font-weight: 700;
+    color: white;
+    padding-top: 40px;
+}
+.navbar ul{
+    padding-right: 50px;
+    padding-top: 40px;
+    
+}
+.navbar h1:hover {
+    cursor: pointer;
+    color:red ;
+}
+.navbar li:hover a{
+    cursor: pointer;
+    color:red;
+    transition: 1s;
+}
+.navbar li.active a{
+    color: rgb(185, 6, 6);
+}
+
+
+
+/*detail*/
+.detail{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 600px;
+    justify-content: space-between;
+}
+.home-info{
+    color:white;
+    width:40%;
+    margin: 50px;
+    animation: slideInLeft 1s ease-out forwards;
+}
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-300px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.home-info h1{
+    font-size: 40px;
+    padding: 10px;
+}
+.home-info h2 {
+    font-size: 30px;
+    padding: 10px;
+    color: red;
+    white-space: nowrap; /* Keep text in one line */
+    overflow: hidden; /* Hide text until it 'types' */
+    animation: typing 2s steps(20, end)
+}
+
+/* Typing effect */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 20ch; } 
+}
+
+
+.home-info p{
+    font-size: 20px;
+    padding: 10px;
+}
+.btn{
+    padding: 10px;
+    align-items: center;
+    display: flex
+}
+.btn a{
+    text-decoration: none;
+}
+.cv:hover{
+    background: transparent;
+    transition: 1s;
+    color: rgb(235, 113, 37);
+}
+i:hover{
+    background: transparent;
+    transition: 1s;
+    color: rgb(235, 113, 37);
+}
+.cv{
+    padding: 10px;
+    font-size: 15px;
+    width: 100px;
+    background-color: red;
+    border-radius: 50px;
+    border-style: solid;
+    border-color:white;
+    color: white;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 0 20px red;
+    font-weight: 900;
+    animation: jump 5s ease-in-out infinite;
+}
+@keyframes jump {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+.sci{
+    display: inline-block;
+    padding-left: 10px;
+}
+.sci i{
+    font-size: 20px;
+    margin: 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 20px red;
+    padding: 5px;
+    color: red;
+    animation: jump 5s ease-in-out infinite;
+}
+@keyframes jump {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+.sci i:hover{
+    background-color: red;
+    color: black;
+}
+/*img*/
+.box {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+}
+
+/* Pseudo-element for rotating border */
+.box::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    padding: 5px; /* space for border */
+    background: 
+        linear-gradient(45deg,black,red);
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    animation: rotateBorder 3s linear infinite;
+}
+
+
+.image img {
+    position: absolute;
+    right: 55px;
+    display: block;
+    object-fit: cover;
+    z-index: -1;
+}
+
+
+@keyframes rotateBorder {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.photo{
+    margin: 50px;
+    animation: slideInLeft 1s ease-out forwards;
+}
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-300px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+
+
